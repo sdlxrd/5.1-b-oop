@@ -6,9 +6,8 @@ using namespace std;
 
 class Exception : exception
 {
-	string msg;
+	string message;
 	public:
-		Exception(string) : msg(msg) {}
-		string getMessage() { return msg; }
+		Exception(string message) : message(message) {}
+		string What() { return message; }
 };
-

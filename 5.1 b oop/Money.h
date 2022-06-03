@@ -3,7 +3,9 @@
 #include <string>
 #include "Exception.h"
 #include "NewException.h"
+
 using namespace std;
+
 class Money
 {
 private:
@@ -11,12 +13,12 @@ private:
 	unsigned long kop;
 public:
 	Money();
-	Money(long, unsigned long);
+	Money(const long, const unsigned long);
 	Money(const Money&);
 	~Money() {}
 	
-	void setGrn(long grn) { this->grn = grn; }
-	void setKop(unsigned long kop) { this->kop = kop; }
+	void setGrn(long grn);
+	void setKop(unsigned long kop);
 	long getGrn() const { return grn; }
 	unsigned long getKop() const { return kop; }
 	
@@ -38,6 +40,4 @@ public:
 	Money operator ++(int);
 	Money& operator --();
 	Money operator --(int);
-	
 };
-
