@@ -32,7 +32,8 @@ public:
 	bool operator >(const Money&);
 	bool operator <(const Money&);
 	
-	
+	bool Init(int, int);
+
 	friend istream& operator >> (istream&, Money&);
 	friend ostream& operator << (ostream&, const Money&);
 	

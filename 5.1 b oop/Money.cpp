@@ -75,7 +75,7 @@ Money::operator string() const
 istream& operator >> (istream& in, Money& x)
 {
 	long f;
- long s;
+	long s;
 	cout << "Grn = "; in >> f;
 	cout << "Kop = "; in >> s;
 	cout << endl;
@@ -88,7 +88,6 @@ istream& operator >> (istream& in, Money& x)
 		x.setGrn(f);
 		x.setKop(s);
 	}
-
 	return in;
 }
 ostream& operator <<(ostream& out, const Money& x)
@@ -130,6 +129,20 @@ Money operator *(const Money& x, const double n)
 	t.setGrn(a);
 	t.setKop(b);
 	return t;
+}
+
+bool Money::Init(int first, int second)
+{
+	if (first >= 0 && second >= 0)
+	{
+		grn = first;
+		kop = second;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 Money& Money::operator ++()

@@ -3,6 +3,15 @@
 
 using namespace std;
 
+Money MakeMoney(int x, int y)
+{
+	Money money;
+	if (!money.Init(x, y))
+		cout << "wrong argument init " << endl;
+
+	return money;
+}
+
 int main()
 {
 	Money a(0, 0), b(0, 0);
@@ -19,32 +28,8 @@ int main()
 			cout << "x= "; cin >> x;
 			cout << endl << "First sum = " << a;
 			cout << "Second sum = " << b << endl;
-
-			cout << "first - second: " << a - b << endl;
-			cout << "first * x: " << a * x;
-			cout << "second * x: " << b * x << endl;
-
-			if (a == b)
-			{
-				cout << a.getGrn() << ", " << a.getKop() << " == " << b.getGrn() << ", " << b.getKop() << endl << endl;
-			}
-			if (a < b)
-			{
-				cout << a.getGrn() << ", " << a.getKop() << " < " << b.getGrn() << ", " << b.getKop() << endl << endl;
-			}
-			if (a > b)
-			{
-				cout << a.getGrn() << ", " << a.getKop() << " > " << b.getGrn() << ", " << b.getKop() << endl << endl;
-			}
-
-			cout << "a++  " << a++;
-			cout << "result = " << a << endl;
-			cout << "++a  " << ++a << endl;
-
-			cout << "a--  " << a--;
-			cout << "result = " << a << endl;
-			cout << "--a  " << --a << endl;
 		}
+
 		catch (invalid_argument ex)
 		{
 			res = false;
@@ -63,4 +48,28 @@ int main()
 
 	} while (!res);
 
+	cout << "first - second: " << a - b << endl;
+	cout << "first * x: " << a * x;
+	cout << "second * x: " << b * x << endl;
+
+	if (a == b)
+	{
+		cout << a.getGrn() << ", " << a.getKop() << " == " << b.getGrn() << ", " << b.getKop() << endl << endl;
+	}
+	if (a < b)
+	{
+		cout << a.getGrn() << ", " << a.getKop() << " < " << b.getGrn() << ", " << b.getKop() << endl << endl;
+	}
+	if (a > b)
+	{
+		cout << a.getGrn() << ", " << a.getKop() << " > " << b.getGrn() << ", " << b.getKop() << endl << endl;
+	}
+
+	cout << "a++  " << a++;
+	cout << "result = " << a << endl;
+	cout << "++a  " << ++a << endl;
+
+	cout << "a--  " << a--;
+	cout << "result = " << a << endl;
+	cout << "--a  " << --a << endl;
 }
